@@ -1,0 +1,67 @@
+# Don't check auto-generated stuff into git
+build
+node_modules/
+stats.json
+coverage/
+# Cruft
+.DS_Store
+npm-debug.log
+.out
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+# Yarn
+server/babeltop-web-firebase-adminsdk*
+
+# User-specific stuff:
+.idea/workspace.xml
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
+.idea/codeStyles/Project.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+credentials.js
+.env
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+server/translateKey.json
+
+app/jsconfig.json
+env/dev/*
+
+# pnpm lock
+pnpm-lock.yaml
+junit.xml
+.vscode/*
+junit/*
+
+.package-lock-md5
+
+cucumber.json
+cucumber-web.json
+screenshots/**
+screenshots
+.eslintcache
+package-lock.md5
+/.ebextensions/**
+/.platform/**
+
+# serverless
+.serverless/
