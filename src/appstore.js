@@ -29,9 +29,12 @@ const getAppInfo = async (id) => {
   app.price = objJson.offers.price;
 
   const mainDom = $(`.animation-wrapper`).children().eq(1);
+  const titleDom = mainDom.children('section').eq(0);
   const updateDom = mainDom.children('section').eq(3);
   const informationDom = mainDom.children('section').eq(5);
   const websiteDom = mainDom.children('section').eq(6);
+
+  app.summary = titleDom.find('.product-header__subtitle').text() || null;
 
   let appUpdatedAt = updateDom.find('.whats-new__content > div:nth-child(1) > div > time').attr('datetime') || null;
   app.appUpdatedAt = (appUpdatedAt) ? appUpdatedAt.substring(0, appUpdatedAt.indexOf('T')) : null;

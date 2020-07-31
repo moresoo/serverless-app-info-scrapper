@@ -50,7 +50,7 @@ const getAppInfo = async (id) => {
           app.screenshots = ds5[12][0].map((v) => v[3][2]);
           app.logo = ds5[12][1][3][2];
           app.youtube = ds5[12][3] ? `https://www.youtube.com/watch?v=${ds5[12][3][0][2]}` : null;
-          app.contentRating = parseInt(ds5[12][4][0].match(/\d/g).join(''));
+          app.contentRating = ds5[12][4][0].replace('세 이상', '');
           app.company = ds5[12][5][1] || null;
           app.email = ds5[12][5][2] ? ds5[12][5][2][0] : null;
           app.website = ds5[12][5][3] ? ds5[12][5][3][5][2] : null;
