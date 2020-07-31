@@ -26,3 +26,10 @@ functions:
           path: googleplay
           method: get
           cors: true
+  getAppStoreAppInfo:
+    handler: src/appstore.handler
+    events:
+      - http:
+          path: appstore
+          method: get
+          cors: true

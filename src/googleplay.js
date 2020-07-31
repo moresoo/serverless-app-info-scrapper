@@ -50,7 +50,7 @@ const getAppInfo = async (id) => {
           app.screenshots = ds5[12][0].map((v) => v[3][2]);
           app.logo = ds5[12][1][3][2];
           app.youtube = ds5[12][3] ? `https://www.youtube.com/watch?v=${ds5[12][3][0][2]}` : null;
-          app.contentRating = ds5[12][4][0];
+          app.contentRating = parseInt(ds5[12][4][0].match(/\d/g).join(''));
           app.company = ds5[12][5][1] || null;
           app.email = ds5[12][5][2] ? ds5[12][5][2][0] : null;
           app.website = ds5[12][5][3] ? ds5[12][5][3][5][2] : null;
@@ -59,7 +59,7 @@ const getAppInfo = async (id) => {
           app.appUpdatedAt = moment(new Date(ds5[12][8][0] * 1000)).tz('Asia/Seoul').format('YYYY-MM-DD');
           app.installs = ds5[12][9][1] ? ds5[12][9][2] : null;
           app.category = ds5[12][13][0][2].startsWith('GAME_') ? '게임' : ds5[12][13][0][0];
-          app.appCreatedAt = ds5[12][36] ? moment(new Date(ds5[12][36])).tz('Asia/Seoul').format('YYYY-MM-DD') : null;
+          app.appPublishedAt = ds5[12][36] ? moment(new Date(ds5[12][36])).tz('Asia/Seoul').format('YYYY-MM-DD') : null;
           break;
 
         case 'ds:6':
@@ -75,7 +75,7 @@ const getAppInfo = async (id) => {
           const ds8 = obj.data;
           app.size = ds8[0] || null;
           app.version = ds8[1] || null;
-          app.requiredDevice = ds8[2] || null;
+          app.requiredDevice = ds8[2].replace(' 이상', '') || null;
           break;
       }
     } catch {
