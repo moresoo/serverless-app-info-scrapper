@@ -19,17 +19,24 @@ custom:
     includeModules: true
 
 functions:
-  getGooglePlayAppInfo:
+  getAppInfoByIdFromGooglePlay:
     handler: src/googleplay.handler
     events:
       - http:
           path: googleplay
           method: get
           cors: true
-  getAppStoreAppInfo:
+  getAppInfoByIdFromAppStore:
     handler: src/appstore.handler
     events:
       - http:
           path: appstore
+          method: get
+          cors: true
+  searchAppIdsByKeyword:
+    handler: src/searchAppIds.handler
+    events:
+      - http:
+          path: app-search
           method: get
           cors: true

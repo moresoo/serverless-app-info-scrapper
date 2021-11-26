@@ -41,14 +41,14 @@ const getAppInfo = async (id) => {
           // app.priceCurrency = app.price > 0 ? ds3[2][0][0][0][1][0][1] : null;
           break;
 
-        case 'ds:5':
+        case 'ds:7':
           // eslint-disable-next-line no-case-declarations
           const ds5 = obj.data[0];
           app.name = ds5[0][0];
           app.description = ds5[10][0][1];
           app.summary = ds5[10][1][1];
           app.screenshots = ds5[12][0].map((v) => v[3][2]);
-          app.logo = ds5[12][1][3][2];
+          app.logo = `${ds5[12][1][3][2]}=s180-rw`;
           app.youtube = ds5[12][3] ? `https://www.youtube.com/watch?v=${ds5[12][3][0][2]}` : null;
           app.contentRating = ds5[12][4][0].replace('세 이상', '');
           app.company = ds5[12][5][1] || null;
@@ -95,6 +95,6 @@ export const handler = async (event) => {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
     },
-    body: JSON.stringify({ result }),
+    body: JSON.stringify(result),
   };
 };
