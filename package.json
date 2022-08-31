@@ -23,7 +23,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.35",
     "source-map-support": "^0.5.19"
   }
 }
